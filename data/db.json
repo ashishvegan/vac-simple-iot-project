@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "u_default_ashish",
+      "name": "Ashish",
+      "email": "ashish@example.com",
+      "passwordHash": "$2a$10$8B1bP4scKtG2Fxr1uD63ruNYkIORgbacRbHO5akVjsKg3VEGGjrdy"
+    },
+    {
+      "id": "u_1791009747465",
+      "name": "Ashish Vegan",
+      "email": "ashishveganwork@gmail.com",
+      "passwordHash": "$2a$10$CxoyFQFM2LAxEU/5s0lRyubh4HvRKxgknA9mvGYS6DdcAQadVpAOi"
+    }
+  ],
+  "deviceState": {
+    "online": false,
+    "lastSeen": 0,
+    "currentTemperature": 34,
+    "currentHumidity": 50,
+    "lcdLine1": "WELCOME TO IoT",
+    "lcdLine2": "Hello",
+    "ledState": "ON"
+  },
+  "recordCounter": 4,
+  "records": [
+    {
+      "id": 1,
+      "temperature": 34,
+      "humidity": 50,
+      "time": "11:30 AM",
+      "date": "03-10-2026",
+      "timestamp": 1791009140177
+    },
+    {
+      "id": 2,
+      "temperature": 35,
+      "humidity": 49,
+      "time": "11:45 AM",
+      "date": "03-10-2026",
+      "timestamp": 1791009200177
+    },
+    {
+      "id": 3,
+      "temperature": 34,
+      "humidity": 51,
+      "time": "12:00 PM",
+      "date": "03-10-2026",
+      "timestamp": 1791009260177
+    },
+    {
+      "id": 4,
+      "temperature": 34,
+      "humidity": 50,
+      "time": "12:04 PM",
+      "date": "03-10-2026",
+      "timestamp": 1791009320177
+    }
+  ]
+}

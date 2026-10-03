@@ -1,0 +1,172 @@
+/* Custom Styles for Simple IoT World */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --primary-red: #ef4444;
+  --primary-red-hover: #dc2626;
+  --primary-red-dark: #b91c1c;
+  --primary-red-glow: rgba(239, 68, 68, 0.4);
+  --bg-gradient-start: #fff5f5;
+  --bg-gradient-end: #fee2e2;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(239, 68, 68, 0.15);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --lcd-bg: #809a6f;
+  --lcd-text: #172a15;
+}
+
+.dark {
+  --bg-gradient-start: #0f0a0a;
+  --bg-gradient-end: #1a0b0e;
+  --card-bg: rgba(26, 17, 20, 0.85);
+  --card-border: rgba(239, 68, 68, 0.25);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --lcd-bg: #1c2b1e;
+  --lcd-text: #4ade80;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 20px 35px -10px rgba(220, 38, 38, 0.15);
+}
+
+/* Red Gradient Accents */
+.red-gradient-bg {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 50%, #991b1b 100%);
+}
+
+.red-gradient-text {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .red-gradient-text {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 50%, #fca5a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Heartbeat pulse animation */
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+.heart-pulse {
+  display: inline-block;
+  color: #ef4444;
+  animation: heartPulse 1.8s infinite ease-in-out;
+}
+
+/* Beacon pulse for Online/Offline indicator */
+@keyframes beaconPing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.beacon-pulse {
+  animation: beaconPing 2s infinite ease-out;
+}
+
+/* LCD 16x2 Display Hardware Simulator */
+.lcd-screen {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: var(--lcd-bg);
+  color: var(--lcd-text);
+  border: 12px solid #27272a;
+  border-radius: 8px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6), 0 8px 25px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  text-shadow: 0 0 3px currentColor;
+  position: relative;
+  user-select: none;
+}
+
+.lcd-grid-overlay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 8px 12px;
+}
+
+/* Innovative 3D Futuristic LED Switch */
+.led-switch-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.led-bulb-container {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.led-bulb-container.led-off {
+  background: radial-gradient(circle, #3f3f46 0%, #18181b 80%);
+  border: 4px solid #52525b;
+}
+
+.led-bulb-container.led-on {
+  background: radial-gradient(circle, #fca5a5 0%, #ef4444 40%, #991b1b 100%);
+  border: 4px solid #f87171;
+  box-shadow: 0 0 50px #ef4444, 0 0 100px rgba(239, 68, 68, 0.6), inset 0 0 20px #ffffff;
+  animation: ledGlowPulse 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes ledGlowPulse {
+  0% {
+    box-shadow: 0 0 40px #ef4444, 0 0 80px rgba(239, 68, 68, 0.5), inset 0 0 15px #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 60px #ef4444, 0 0 120px rgba(239, 68, 68, 0.8), inset 0 0 25px #ffffff;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(239, 68, 68, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 68, 68, 0.6);
+}
+
+/* Radial Gauge Circular SVG styles */
+.gauge-svg circle {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
